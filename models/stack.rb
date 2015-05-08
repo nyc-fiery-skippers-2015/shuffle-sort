@@ -1,15 +1,18 @@
-require_relative "./card.rd"
+require_relative "card.rb"
+require 'pry'
 
 class Stack
 	attr_reader :stack
 	attr_accessor :index
 	def initialize(newcard_loader)
 		@stack=newcard_loader
+		
 		@index=0
 	end
 
 	def shuffle
-		stack=stack.shuffle
+		#binding.pry
+		stack=self.stack.shuffle
 	end
 
 	def correct?(user_ans)
@@ -42,7 +45,7 @@ class Stack
 	end
 
 	def next_card
-		index+=1
+		self.index+=1
 	end
 
 	def gets
@@ -50,7 +53,7 @@ class Stack
 	end
 
 	def stack_complete
-		index==stack.length-1
+		index==stack.length
 	end
 
 	def number_wrong

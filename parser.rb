@@ -1,9 +1,12 @@
+require 'csv'
+
 module Parser
   def self.load(file)
-    CSV.open(file, mode = "wb", headers: true, header_converters: :symbol, converters: :all).map{|row|Card.new(row)}
+    CSV.open(file, headers: true, header_converters: :symbol, converters: :all).map{|row|Card.new(row)}
   end
 
   def self.save(file, data)
+   
     CSV.open(file, "wb") do |csv|
       csv << data.first.instance_variables.map!{|variable|variable.to_s.gsub!("@", "")}
       data.each do |object|
