@@ -6,7 +6,7 @@ class View
   end
 
   def self.user_input
-    gets.chomp
+    gets.chomp.downcase
   end
 
   def self.correct
@@ -25,8 +25,12 @@ class View
     puts "Congratulations! You guessed all questions correct!"
   end
 
-  def done
+  def self.done
     puts "Do you want to review wrong cards?"
+  end
+
+  def self.goodbye
+    puts "Goodbye!"
   end
 
 end
