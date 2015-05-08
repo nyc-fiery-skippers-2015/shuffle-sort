@@ -18,5 +18,3 @@ module Parser
   end
 end
 
-# array = Parser.load("cards.txt")
-
