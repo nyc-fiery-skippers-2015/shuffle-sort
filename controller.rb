@@ -15,13 +15,17 @@ class Controller
 		until input=="exit" || test_stack.stack_complete
 			View.display(test_stack.gets_card_q)
 			input=View.user_input
-			if test_stack.correct?(input)
+			if input == "exit"
+				View.goodbye
+			elsif test_stack.correct?(input)
 				View.correct
 				test_stack.tag_correct
 			else
 				View.wrong
 				input=View.user_input
-				if test_stack.correct?(input)
+				if input == "exit"
+					View.goodbye
+				elsif test_stack.correct?(input)
 					View.correct
 					test_stack.tag_correct
 					test_stack.next_card
@@ -45,10 +49,11 @@ class Controller
 
 		# else
 		# puts number_wrong
-		   binding.pry
 		Parser.save('cards.csv', test_stack.stack)
 
-		View.congrats
+		if test_stack.stack_complete 
+			View.congrats
+		end
 	end
 
 
