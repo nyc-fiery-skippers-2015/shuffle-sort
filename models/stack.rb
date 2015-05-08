@@ -24,7 +24,8 @@ class Stack
 	end
 
 	def start_over
-		index=0
+		self.index=0
+		stack.each{|card|card.correct = ""}
 	end
 
 	def add_card(ques_string, ans_string)
@@ -33,7 +34,6 @@ class Stack
 
 	def delete_card(user_entered_card_numb)
 		stack.delete_at(user_entered_card_numb.to_i-1)
-
 	end
 
 	def gets_card_q

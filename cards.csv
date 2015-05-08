@@ -1,6 +1,6 @@
 question,answer,id,correct
-To create a second name for the variable or method.,alias,1,correct
-A command that appends two or more objects together.,and,2,correct
+To create a second name for the variable or method.,alias,1,""
+A command that appends two or more objects together.,and,2,""
 Designates code that must be run unconditionally at the beginning of the program before any other.,BEGIN,3,""
 "Delimits a 'begin' block of code, which can allow the use of while and until in modifier position with multi-line statements.",begin,4,""
 "Gives an unconditional termination to a code block, and is usually placed with an argument.",break,5,""

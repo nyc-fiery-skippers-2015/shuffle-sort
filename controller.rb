@@ -7,6 +7,7 @@ class Controller
 	attr_reader :test_stack, :file_name
 	def initialize
 		@test_stack=Stack.new(Parser.load('cards.csv'))
+		test_stack.start_over
 		run!
 	end
 
@@ -43,14 +44,11 @@ class Controller
 		View.welcome
 		test_stack.shuffle
 		look_at_cards
-		# View.done
-		# input=View.user_input
-		# if input=="continue"
-
-		# else
-		# puts number_wrong
 		Parser.save('cards.csv', test_stack.stack)
-
+		# View.done
+		# input = View.user_input
+		# if input == "Review"
+		# 	p bad_stack
 		if test_stack.stack_complete 
 			View.congrats
 		end
